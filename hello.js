@@ -86,12 +86,12 @@ var pinkie = {
 	type: "Earth Pony"
 };
 
-function ponyType(pony){
-	return pony.type;
-}
-console.log(ponyType(pinkie));
+//function ponyType(pony){
+//	return pony.type;
+//}
+//console.log(ponyType(pinkie));
 
 /**********************/
-// COMBINATORS
+// 
 
 
