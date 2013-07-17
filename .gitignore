@@ -1,3 +1,5 @@
-.idea
-fpSamplesFromBodilTalk.iml
+.idea/
+app.js
 node_modules
+package.json
+fpSamplesFromBodilTalk.iml
