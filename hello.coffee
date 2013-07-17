@@ -1,31 +1,35 @@
 
-
 # **********************
-console.log("\n********************");
-console.log("FUNCTION");
+console.log "\n********************"
+console.log "FUNCTION - fonction"
+console.log "add = (a,b) -> a + b"
+console.log "add 3,6"
 add = (a,b) -> a + b
 
 
-console.log(add(3,6));
+console.log add 3,6
 
 # **********************
 console.log "\n********************"
-console.log "FUNCTOR"
+console.log "FUNCTOR - foncteur/morphisme"
 caps = (start) -> start.toUpperCase()
 console.log caps "hello ponies"
 
-###
- map(f,l){
-	var n = [],i;
-	for(i=0;i<l.length; i++){
-		n.push(f(l[i]));
-	}
-	return n;
-}
-var ponies = ["Rainbow Dash","Pinkie Pie","Twilight Sparkle"];
-console.log(map(CAPS,ponies))
+console.log "map = (f,l) ->
+  n = []
+  for i in [0..l.length-1]
+    n.push f(l[i])
+  n"
+map = (f,l) ->
+  n = []
+  for i in [0..l.length-1]
+    n.push f(l[i])
+  n
+console.log "map caps,ponies"
+ponies = ["Rainbow Dash","Pinkie Pie","Twilight Sparkle"]
+console.log map caps,ponies
 
-# ********************** 
+### **********************
 console.log("\n********************");
 console.log("FILTER");
  tooCool(s){
