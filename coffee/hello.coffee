@@ -2,20 +2,28 @@
 # **********************
 console.log "\n********************"
 console.log "FUNCTION - fonction"
-console.log "add = (a,b) -> a + b"
-console.log "add 3,6"
+console.log "\tadd = (a,b) -> a + b"
 add = (a,b) -> a + b
-
-
-console.log add 3,6
+console.log "\tadd 3,6"
+console.log "\t\t" + add 3,6
 
 # **********************
 console.log "\n********************"
 console.log "FUNCTOR - foncteur/morphisme"
+console.log "\tcaps = (start) -> start.toUpperCase()"
 caps = (start) -> start.toUpperCase()
-console.log caps "hello ponies"
+console.log "\tcaps 'hello ponies'"
+console.log caps "\t\thello ponies"
 
-console.log "map = (f,l) ->
+# **********************
+console.log "\n********************\n"
+console.log 'ponies = ["Rainbow Dash","Pinkie Pie","Twilight Sparkle"]'
+ponies = ["Rainbow Dash","Pinkie Pie","Twilight Sparkle"]
+
+# **********************
+console.log "\n********************"
+console.log "MAP"
+console.log "\tmap = (f,l) ->
   n = []
   for i in [0..l.length-1]
     n.push f(l[i])
@@ -25,28 +33,31 @@ map = (f,l) ->
   for i in [0..l.length-1]
     n.push f(l[i])
   n
-console.log "map caps,ponies"
-ponies = ["Rainbow Dash","Pinkie Pie","Twilight Sparkle"]
-console.log map caps,ponies
+console.log "\tmap caps,ponies"
+console.log "\t\t" + map caps,ponies
+
+# **********************
+console.log "\n********************"
+console.log "FILTER"
+console.log '\ttooCool = (s) -> s != "Rainbow Dash"'
+tooCool = (s) -> s != "Rainbow Dash"
+console.log '\tfilter = (f,l) ->
+  n = []
+  for i in [0..l.length-1]
+    if f l[i]
+      n.push l[i]
+  n'
+filter = (f,l) ->
+  n = []
+  for i in [0..l.length-1]
+    if f l[i]
+      n.push l[i]
+  n
+console.log "\tfilter(tooCool,ponies)"
+console.log "\t\t" + filter(tooCool,ponies)
+
 
 ### **********************
-console.log("\n********************");
-console.log("FILTER");
- tooCool(s){
-	return s != "Rainbow Dash";
-}
- filter(f,l){
-	var n = [], i;
-	for(i=0;i<l.length; i++){
-		if(f(l[i]) == true){
-			n.push(l[i]);
-		}
-	}
-	return n;
-}
-console.log(filter(tooCool,ponies));
-
-# ********************** 
 console.log("\n********************");
 console.log("REDUCE");
  reduce(f, l, i){
